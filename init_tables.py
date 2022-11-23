@@ -22,8 +22,22 @@ for record in js3:
 
 
 for job in unique_role:
-  if job is not None:
     cur.execute("INSERT INTO role(role) VALUES(?)", (job,))
+
+cur.execute("INSERT INTO role(role_id, role) VALUES (?,?)", (0,"UNKNOWN"))
+
+unique_industry = set()
+for record in js1:
+    unique_industry.add(record["What industry do you work in?"])
+for record in js2:
+    unique_industry.add(record["Industry in Company"])
+
+for industry in unique_industry:
+  cur.execute("INSERT INTO industry(industry) VALUES(?)", (industry,))
+
+cur.execute("INSERT INTO industry(industry_id, industry) VALUES (?,?)", (0,"UNKNOWN"))
 
 
 conn.commit()
+
+conn.close()
