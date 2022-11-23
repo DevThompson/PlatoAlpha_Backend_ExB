@@ -1,0 +1,1 @@
+[{"stmt":"SELECT\n      round(avg(annual_salary_alt), 2) Avg_Salary\nFROM \n      employee e\n        JOIN \n          role r\n            on e.role_id = r.role_id\nWHERE\n      r.role LIKE '%engineer'\nAND\n      length(e.annual_salary_alt) < 7;","header":["Avg_Salary"],"rows":[["106558.78"]]}]

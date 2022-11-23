@@ -6,7 +6,7 @@ conn = sqlite3.connect("plato_database.db")
 cur = conn.cursor()
 
 #Creates table
-cur.execute("CREATE TABLE IF NOT EXISTS employee(employee_id INTEGER PRIMARY KEY, age_range, industry_id NOT NULL, role_id NOT NULL, annual_salary, currency, city, state, country)")
+cur.execute("CREATE TABLE IF NOT EXISTS employee(employee_id INTEGER PRIMARY KEY, age_range, industry_id NOT NULL, role_id NOT NULL, annual_salary, annual_salary_alt, currency, city, state, country)")
 cur.execute("CREATE TABLE IF NOT EXISTS role(role_id INTEGER PRIMARY KEY, role UNIQUE)")
 cur.execute("CREATE TABLE IF NOT EXISTS industry(industry_id INTEGER PRIMARY KEY, industry UNIQUE)")
 
